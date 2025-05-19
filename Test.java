@@ -1,35 +1,22 @@
-package Actividad1;
+package Actividad2;
+
+import Actividad1.ExceptionIsEmpty;
 
 public class Test {
 
-	public static void main (String[] args) throws ExceptionIsEmpty {
-		StackArray<Integer> pilaInt = new StackArray<Integer>(4);
-		try {
-			pilaInt.push(45);
-			pilaInt.push(1000);
-			pilaInt.push(500);
-			pilaInt.push(-5);
-			pilaInt.push(-10000); // provoca excepción
-			
-		} catch (RuntimeException e) {
-			System.out.println("Error al insertar: " + e.getMessage());
-			
-		}
-			
-		System.out.println(pilaInt);
-		System.out.println("La pila esta llena? " + pilaInt.isFull());
-			
-		pilaInt.pop();
-		pilaInt.pop();
-		pilaInt.pop();
-		//pilaInt.pop();
-		System.out.println(pilaInt);
-		//System.out.println("El elemento de la cabeza de la pila es: " + pilaInt.top());
-		//pilaInt.pop();
-		System.out.println("¿La pila esta vacia?\n" + pilaInt.isEmpty());
-		System.out.println("¿La pila esta llena?\n" + pilaInt.isFull());
-			
+	public static void main(String[] args) throws ExceptionIsEmpty {
+		QueueLink<Integer> queueInt = new QueueLink<Integer>();
+		System.out.println("La QUEUELINK esta vacia? " + queueInt.isEmpty());
+		queueInt.enqueue(45);
+		queueInt.enqueue(600);
+		queueInt.enqueue(-1000);
+		queueInt.enqueue(-5);
+		System.out.println(queueInt);
+		System.out.println("Retiramos -> " + queueInt.dequeue());
+		queueInt.enqueue(17);
+		System.out.println(queueInt);
+		System.out.println("En la cabeza tenemos a -> " + queueInt.front());
+		System.out.println("En la parte trasera tenemos a -> " + queueInt.back());
+		System.out.println("La QUEUELINK esta vacia? " + queueInt.isEmpty());
 	}
-		
-
 }
