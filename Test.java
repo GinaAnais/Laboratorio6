@@ -1,22 +1,27 @@
-package Actividad2;
+package Actividad3;
 
 import Actividad1.ExceptionIsEmpty;
 
 public class Test {
 
-	public static void main(String[] args) throws ExceptionIsEmpty {
-		QueueLink<Integer> queueInt = new QueueLink<Integer>();
-		System.out.println("La QUEUELINK esta vacia? " + queueInt.isEmpty());
-		queueInt.enqueue(45);
-		queueInt.enqueue(600);
-		queueInt.enqueue(-1000);
-		queueInt.enqueue(-5);
-		System.out.println(queueInt);
-		System.out.println("Retiramos -> " + queueInt.dequeue());
-		queueInt.enqueue(17);
-		System.out.println(queueInt);
-		System.out.println("En la cabeza tenemos a -> " + queueInt.front());
-		System.out.println("En la parte trasera tenemos a -> " + queueInt.back());
-		System.out.println("La QUEUELINK esta vacia? " + queueInt.isEmpty());
+	public static void main (String[] args) throws ExceptionIsEmpty {
+		PriorityQueueLinkSort<String, Integer> priQue = new PriorityQueueLinkSort<String, Integer>();
+		System.out.println("La COLA de prioridad esta vacia? " + priQue.isEmpty());
+		priQue.enqueue("Hola", 10);
+		priQue.enqueue("Buenas", 1);
+		priQue.enqueue("asd", 7);
+		priQue.enqueue("45", 11);
+		System.out.println(priQue);
+		priQue.enqueue("Buenos Dias", 10);
+		priQue.enqueue("adios", 9);
+		priQue.enqueue("qwe", 0);
+		System.out.println(priQue);
+		System.out.println("Qutamos el elemento: " + priQue.dequeue());
+		System.out.println("Qutamos el elemento: " + priQue.dequeue());
+		System.out.println(priQue);
+		
+		System.out.println("FRONT: " + priQue.front());
+		System.out.println("BACK: " + priQue.back());
+		
 	}
 }
